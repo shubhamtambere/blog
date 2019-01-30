@@ -12,6 +12,7 @@ class Article(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    id = models.IntegerField(null=False, default=-1, primary_key=True)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -19,3 +20,8 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    about_me = models.TextField()
+    summary = models.TextField()

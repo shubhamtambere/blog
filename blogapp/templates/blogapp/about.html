@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Byte Storm</title>
+    <title>Byte Storm - About</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
@@ -19,7 +19,7 @@
     <link href="{% static "css/clean-blog.min.css" %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static   "vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -43,8 +43,8 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/">Start Bootstrap</a>
-            </div>-->
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            </div> -->
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -56,7 +56,7 @@
                         <a href="/about">About</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="#">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -67,14 +67,14 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('{% static "img/home-bg.jpg" %}')">
+    <header class="intro-header" style="background-image: url('{% static 'img/about-bg.jpg' %}')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Byte Storm</h1>
+                    <div class="page-heading">
+                        <h1>About Me</h1>
                         <hr class="small">
-                        <span class="subheading">ones, zeros and beyond...</span>
+                        <span class="subheading">{{ about_me.about_me }}</span>
                     </div>
                 </div>
             </div>
@@ -85,26 +85,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-              {% for article in articles %}
-                <div class="post-preview">
-                    <a href="{% url "detail_view" article.id %}">
-                        <h2 class="post-title">
-                            {{ article.title}}
-                        </h2>
-
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">{{ article.author}}</a> on {{article.published_date}}</p>
-                </div>
-                <hr>
-                {% endfor %}
-
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
-            </div>
+                <p>{{ about_me.summary }}</p>
+              </div>
         </div>
     </div>
 
