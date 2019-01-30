@@ -119,8 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 #STATIC_URL = '/home/shubham/projects/django/src/blog/blogapp/static/blogapp/'
+#STATIC_URL = 'static/'
 STATIC_URL = os.path.join(BASE_DIR, 'blogapp/static/blogapp/')
 #STATICFILES_DIRS = ['/home/shubham/projects/django/src/blog/blogapp/static/blogapp/']
 TEMP_PATH = os.path.join(BASE_DIR, 'blogapp/static/blogapp/')
 STATICFILES_DIRS = [TEMP_PATH]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
